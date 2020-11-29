@@ -18,11 +18,17 @@
     "url": "https://github.com/guram96/unsubscribe-decorator.git"
   },
   "keywords": [
-    "Hello",
-    "Greeter"
+    "Rxjs",
+    "Observables",
+    "Angular",
+    "Angular 10",
+    "Angular 2",
+    "Unsubscribe",
+    "Decorator",
+    "Decorators"
   ],
   "author": {
-    "name": "guram96",
+    "name": "guram",
     "email": "soselia.guram@gmail.com"
   },
   "license": "MIT",

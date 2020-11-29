@@ -5,6 +5,7 @@
 Decorator will pipe the observable with `takeUntil(destroy$)` operator and will complete when `destroyFunc` will be called.
 
 Usage 
+``` npm i unsubscribe-decorator
 ```
  @Component({})
  export class MyComponent extends OnInit, OnDestroy {
