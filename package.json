@@ -58,5 +58,7 @@
   "files": [
     "dist/**/*"
   ],
-  "dependencies": {}
+  "dependencies": {
+    "rxjs": "^6.6.3"
+  }
 }

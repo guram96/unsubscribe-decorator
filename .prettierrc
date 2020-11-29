@@ -1,4 +1,15 @@
 {
-  "arrowParens": "always",
-  "trailingComma": "all"
+  "printWidth": 80,
+  "singleQuote": true,
+  "useTabs": false,
+  "tabWidth": 2,
+  "semi": true,
+  "bracketSpacing": true,
+  "trailingComma": "none",
+  "jsxBracketSameLine": true,
+  "arrowParens": "avoid",
+  "rangeStart": 0,
+  "requirePragma": false,
+  "proseWrap": "preserve",
+  "lintStaged": true
 }

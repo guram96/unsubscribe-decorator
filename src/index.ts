@@ -1,1 +1,1 @@
-export const greet = (name: string) => `Hello ${name}`;
+export { Unsubscribe } from './unsubscribe-decorator';
