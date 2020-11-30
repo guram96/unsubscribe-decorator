@@ -9,17 +9,17 @@ Usage
 npm i unsubscribe-decorator
 
 ```
- @Component({})
- export class MyComponent extends OnInit, OnDestroy {
+    @Component({})
+        export class MyComponent extends OnInit, OnDestroy {
 
-     @Unsubscribe()
-     myObservableSource = interval(100)
+        @Unsubscribe()
+        myObservableSource = interval(100)
 
-     ngOnInit() {
-         this.myObservableSource.subscribe(res => console.log(res))
-     }
+        ngOnInit() {
+            this.myObservableSource.subscribe(res => console.log(res))
+        }
 
-     ngOnDestroy() {}
+        ngOnDestroy() {}
  }
 
 You can pass  `destoyFunc` argument if you want to unsubscribe to be called in other place then onDestroy
