@@ -5,7 +5,9 @@
 Decorator will pipe the observable with `takeUntil(destroy$)` operator and will complete when `destroyFunc` will be called.
 
 Usage 
-``` npm i unsubscribe-decorator
+``` 
+npm i unsubscribe-decorator
+
 ```
  @Component({})
  export class MyComponent extends OnInit, OnDestroy {
@@ -19,9 +21,8 @@ Usage
 
      ngOnDestroy() {}
  }
-```
 
-You pass  `destoyFunc` argument if you want to unsubscribe to be called in other place then onDestroy
+You can pass  `destoyFunc` argument if you want to unsubscribe to be called in other place then onDestroy
 
 ```
  @Component({})
@@ -36,4 +37,3 @@ You pass  `destoyFunc` argument if you want to unsubscribe to be called in other
 
      ngAfterViewInit() {}
  }
-```
