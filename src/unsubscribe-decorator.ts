@@ -38,7 +38,7 @@ export function Unsubscribe(params?: { destroyFunc: string }) {
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         //@ts-ignore
         // eslint-disable-next-line prefer-rest-params
-        return f.apply(target, arguments);
+        return f.apply(this, arguments);
       };
     }
 

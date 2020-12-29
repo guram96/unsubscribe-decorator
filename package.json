@@ -1,6 +1,6 @@
 {
   "name": "unsubscribe-decorator",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A decorator to unsubscribe from RxJs observables",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
