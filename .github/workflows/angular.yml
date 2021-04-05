@@ -17,12 +17,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Run a yarn or npm command
-        # You may pin to the exact commit or the version.
-        # uses: Adzz/yarn_command_action@56ed36b86d715869a3cf3d2a9b2de2aff7fa945e
-        uses: Adzz/yarn_command_action@v1.0.0
-        with:
-          # Specify whether to use npm or yarn to run the tests. May be npm or yarn only defaults to yarn
-          package-manager: npm # optional, default is yarn
-          # The command you wish to run e.g. test
-          command: run lint
+       - name: Check out Git repository
+         uses: actions/checkout@v2
+         
+       - name: Set up Node.js
+         uses: actions/setup-node@v1
+         with:
+          node-version: 12
+      
+       # ESLint and Prettier must be in `package.json`
+       - name: Install Node.js dependencies
+         run: npm ci
+
+       - name: Run linters
+         uses: wearerequired/lint-action@v1
+         with:
+          eslint: true
+          prettier: true
