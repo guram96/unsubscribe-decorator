@@ -25,4 +25,4 @@ jobs:
           # Specify whether to use npm or yarn to run the tests. May be npm or yarn only defaults to yarn
           package-manager: npm # optional, default is yarn
           # The command you wish to run e.g. test
-          command: lint
+          command: run lint
