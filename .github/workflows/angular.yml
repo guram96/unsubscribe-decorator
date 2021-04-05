@@ -14,20 +14,28 @@ on:
 
 jobs:
   build:
-    # Machine environment:
-    # https://help.github.com/en/articles/software-in-virtual-environments-for-github-actions#ubuntu-1804-lts
-    # We specify the Node.js version manually below, and use versioned Chrome from Puppeteer.
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js 12.8
-      uses: actions/setup-node@v1
-      with:
-        node-version: 12.8
-    - name: Install dependencies
-      run: npm install
-    - name: Lint
-      run: npm run lint
-    - name: Build
-      run: npm run build -- --prod
+      - uses: actions/checkout@v2
+
+      - name: Cache node modules
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Node ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: npm ci and npm run build
+        run: |
+          npm ci
+          npm run build:ci
